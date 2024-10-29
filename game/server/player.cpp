@@ -2607,22 +2607,10 @@ void CBasePlayer::ObserverUse( bool bIsPressed )
 
 void CBasePlayer::JumptoPosition(const Vector &origin, const QAngle &angles)
 {
-    Vector neworigin;
-    QAngle newangles;
-
-    // Clamp the position and angles to prevent crashes
-    neworigin.x = clamp( origin.x, MIN_COORD_FLOAT, MAX_COORD_FLOAT );
-    neworigin.y = clamp( origin.y, MIN_COORD_FLOAT, MAX_COORD_FLOAT );
-    neworigin.z = clamp( origin.z, MIN_COORD_FLOAT, MAX_COORD_FLOAT );
-
-    newangles.x = clamp( angles.x, MIN_COORD_FLOAT, MAX_COORD_FLOAT );
-    newangles.y = clamp( angles.y, MIN_COORD_FLOAT, MAX_COORD_FLOAT );
-    newangles.z = clamp( angles.z, MIN_COORD_FLOAT, MAX_COORD_FLOAT ); // not clamped in original valve's code, idk why
-
-    SetAbsOrigin( neworigin );
-    SetAbsVelocity( vec3_origin );    // stop movement
-    SetLocalAngles( newangles );
-    SnapEyeAngles( newangles );
+	SetAbsOrigin( origin );
+	SetAbsVelocity( vec3_origin );	// stop movement
+	SetLocalAngles( angles );
+	SnapEyeAngles( angles );
 }
 
 bool CBasePlayer::SetObserverTarget(CBaseEntity *target)
