@@ -6153,7 +6153,9 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 		GiveAmmo( 255,	"Pistol");
 		GiveAmmo( 255,	"AR2");
 		GiveAmmo( 5,	"AR2AltFire");
-		GiveAmmo( 255,	"SMG1");
+		GiveAmmo( 425,	"SMG1");
+		GiveAmmo( 425,  "MINIGUN");
+		GiveAmmo( 425,  "Nailgun");
 		GiveAmmo( 255,	"Buckshot");
 		GiveAmmo( 3,	"smg1_grenade");
 		GiveAmmo( 3,	"rpg_round");
@@ -6174,6 +6176,12 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 		GiveNamedItem( "weapon_rpg" );
 		GiveNamedItem( "weapon_357" );
 		GiveNamedItem( "weapon_crossbow" );
+		GiveNamedItem( "weapon_COMBAT" );
+		GiveNamedItem( "weapon_supershotgun" );
+		GiveNamedItem( "weapon_nailgun" );
+		GiveNamedItem( "weapon_stickybomb" );
+		GiveNamedItem( "weapon_ak47" );
+		GiveNamedItem( "weapon_minigun" );
 #ifdef HL2_EPISODIC
 		// GiveNamedItem( "weapon_magnade" );
 #endif
