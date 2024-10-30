@@ -36,6 +36,147 @@ int ITEM_GiveAmmo( CBasePlayer *pPlayer, float flCount, const char *pszAmmoName,
 }
 
 // ========================================================================
+//	>> Box 9mm MINIGUN Rounds
+// ========================================================================
+class CItem_BoxMINIGUNRounds : public CItem
+{
+public:
+	DECLARE_CLASS(CItem_BoxMINIGUNRounds, CItem);
+
+	void Spawn()
+	{
+		Precache();
+		SetModel("models/items/boxsrounds.mdl");
+
+		BaseClass::Spawn();
+	}
+	void Precache()
+	{
+		PrecacheModel("models/items/boxsrounds.mdl");
+	}
+	bool MyTouch(CBasePlayer *pPlayer)
+	{
+		if (ITEM_GiveAmmo(pPlayer, SIZE_AMMO_MINIGUN, "MINIGUN"))
+		{
+			if (g_pGameRules->ItemShouldRespawn(this) == GR_ITEM_RESPAWN_NO)
+			{
+				UTIL_Remove(this);
+			}
+			return true;
+		}
+		return false;
+	}
+};
+LINK_ENTITY_TO_CLASS(item_box_minigunrounds, CItem_BoxMINIGUNRounds);
+LINK_ENTITY_TO_CLASS(item_ammo_minigun, CItem_BoxMINIGUNRounds);
+
+// ========================================================================
+//	>> Large Box 9mm MINIGUN Rounds
+// ========================================================================
+class CItem_LargeBoxMINIGUNRounds : public CItem
+{
+public:
+	DECLARE_CLASS(CItem_LargeBoxMINIGUNRounds, CItem);
+
+	void Spawn()
+	{
+		Precache();
+		SetModel("models/items/boxsrounds.mdl");
+
+		BaseClass::Spawn();
+	}
+	void Precache()
+	{
+		PrecacheModel("models/items/boxsrounds.mdl");
+	}
+	bool MyTouch(CBasePlayer *pPlayer)
+	{
+		if (ITEM_GiveAmmo(pPlayer, SIZE_AMMO_MINIGUN_LARGE, "Nailgun"))
+		{
+			if (g_pGameRules->ItemShouldRespawn(this) == GR_ITEM_RESPAWN_NO)
+			{
+				UTIL_Remove(this);
+			}
+			return true;
+		}
+		return false;
+	}
+};
+LINK_ENTITY_TO_CLASS(item_large_box_minigunrounds, CItem_LargeBoxMINIGUNRounds);
+LINK_ENTITY_TO_CLASS(item_ammo_minigun_large, CItem_LargeBoxMINIGUNRounds);
+
+// ========================================================================
+//	>> Box 9mm Nailgun Rounds
+// ========================================================================
+class CItem_BoxNAILGUNRounds : public CItem
+{
+public:
+	DECLARE_CLASS(CItem_BoxNAILGUNRounds, CItem);
+
+	void Spawn()
+	{
+		Precache();
+		SetModel("models/items/boxsrounds.mdl");
+
+		BaseClass::Spawn();
+	}
+	void Precache()
+	{
+		PrecacheModel("models/items/boxsrounds.mdl");
+	}
+	bool MyTouch(CBasePlayer *pPlayer)
+	{
+		if (ITEM_GiveAmmo(pPlayer, SIZE_AMMO_NAILGUN, "Nailgun"))
+		{
+			if (g_pGameRules->ItemShouldRespawn(this) == GR_ITEM_RESPAWN_NO)
+			{
+				UTIL_Remove(this);
+			}
+			return true;
+		}
+		return false;
+	}
+};
+LINK_ENTITY_TO_CLASS(item_box_nailgunrounds, CItem_BoxNAILGUNRounds);
+LINK_ENTITY_TO_CLASS(item_ammo_nailgun, CItem_BoxNAILGUNRounds);
+
+// ========================================================================
+//	>> Large Box 9mm Nailgun Rounds
+// ========================================================================
+class CItem_LargeBoxNAILGUNRounds : public CItem
+{
+public:
+	DECLARE_CLASS(CItem_LargeBoxNAILGUNRounds, CItem);
+
+	void Spawn()
+	{
+		Precache();
+		SetModel("models/items/boxsrounds.mdl");
+
+		BaseClass::Spawn();
+	}
+	void Precache()
+	{
+		PrecacheModel("models/items/boxsrounds.mdl");
+	}
+	bool MyTouch(CBasePlayer *pPlayer)
+	{
+		if (ITEM_GiveAmmo(pPlayer, SIZE_AMMO_NAILGUN_LARGE, "NAILGUN"))
+		{
+			if (g_pGameRules->ItemShouldRespawn(this) == GR_ITEM_RESPAWN_NO)
+			{
+				UTIL_Remove(this);
+			}
+			return true;
+		}
+		return false;
+	}
+};
+LINK_ENTITY_TO_CLASS(item_large_box_nailgunrounds, CItem_LargeBoxNAILGUNRounds);
+LINK_ENTITY_TO_CLASS(item_ammo_nailgun_large, CItem_LargeBoxNAILGUNRounds);
+
+
+// ========================================================================
 //	>> BoxSRounds
 // ========================================================================
 class CItem_BoxSRounds : public CItem
