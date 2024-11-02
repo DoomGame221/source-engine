@@ -38,6 +38,8 @@
 #define	SIZE_AMMO_AR2_ALTFIRE		1
 #define SIZE_AMMO_MINIGUN   		450
 #define SIZE_AMMO_MINIGUN_LARGE		425
+#define SIZE_AMMO_GaussEnergy   	450
+#define SIZE_AMMO_GaussEnergy_LARGE 425
 #define SIZE_AMMO_NAILGUN   		20
 #define SIZE_AMMO_NAILGUN_LARGE		200
 
