@@ -6138,6 +6138,7 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 		EquipSuit();
 
 		// Give the player everything!
+		GiveAmmo( 255,  "GaussEnergy");
 		GiveAmmo( 255,	"Pistol");
 		GiveAmmo( 255,	"AR2");
 		GiveAmmo( 5,	"AR2AltFire");
@@ -6167,6 +6168,7 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 		GiveNamedItem( "weapon_COMBAT" );
 		GiveNamedItem( "weapon_supershotgun" );
 		GiveNamedItem( "weapon_nailgun" );
+		GiveNamedItem( "weapon_iontau" );
 		GiveNamedItem( "weapon_stickybomb" );
 		GiveNamedItem( "weapon_ak47" );
 		GiveNamedItem( "weapon_minigun" );
