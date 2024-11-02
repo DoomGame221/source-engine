@@ -217,7 +217,7 @@ void CWeaponIontau::PrimaryAttack(void)
 
 	if (pOwner->GetAmmoCount(m_iPrimaryAmmoType) <= 0)
 	{
-		m_active = true; // ãËéÂÑ§¤§ÂÔ§ä´éáÁé¡ÃÐÊØ¹ËÁ´
+		m_active = true; // à¹ƒà¸«à¹‰à¸¢à¸±à¸‡à¸„à¸‡à¸¢à¸´à¸‡à¹„à¸”à¹‰à¹à¸¡à¹‰à¸à¸£à¸°à¸ªà¸¸à¸™à¸«à¸¡à¸”
 	}
 	else
 	{
@@ -233,7 +233,7 @@ void CWeaponIontau::PrimaryAttack(void)
 
 	if (m_flNextPrimaryAttack < gpGlobals->curtime)
 	{
-		// pOwner->RemoveAmmo(1, m_iPrimaryAmmoType); // äÁèÅ´¨Ó¹Ç¹¡ÃÐÊØ¹
+		// pOwner->RemoveAmmo(1, m_iPrimaryAmmoType); // à¹„à¸¡à¹ˆà¸¥à¸”à¸ˆà¸³à¸™à¸§à¸™à¸à¸£à¸°à¸ªà¸¸à¸™
 		WeaponSound(SINGLE);
 		AddViewKick();
 		m_flNextPrimaryAttack = gpGlobals->curtime + IONTAU_AMMO_RATE;
