@@ -256,7 +256,6 @@ $Project "Server (HL2)"
 			$File "weapon_ak47.cpp"
 			$File "weapon_supershotgun.cpp"
 			$File "weapon_iontau.cpp"
-			$File "c_weapon_iontau.cpp"
 
 			$Folder	"Unused"
 			{
