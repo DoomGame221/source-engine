@@ -1,6 +1,6 @@
 //========= Copyright Valve Corporation, All rights reserved. ============//
 //
-// Purpose: Game rules for Half-Life 2.
+// Purpose: Game rules for Half-Life 2. 
 //
 //=============================================================================//
 
