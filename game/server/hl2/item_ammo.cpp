@@ -106,6 +106,76 @@ LINK_ENTITY_TO_CLASS(item_large_box_minigunrounds, CItem_LargeBoxMINIGUNRounds);
 LINK_ENTITY_TO_CLASS(item_ammo_minigun_large, CItem_LargeBoxMINIGUNRounds);
 
 // ========================================================================
+//	>> Box iontau Rounds
+// ========================================================================
+class CItem_BoxGaussEnergyRounds : public CItem
+{
+public:
+	DECLARE_CLASS(CItem_BoxGaussEnergyRounds, CItem);
+
+	void Spawn()
+	{
+		Precache();
+		SetModel("models/items/boxsrounds.mdl");
+
+		BaseClass::Spawn();
+	}
+	void Precache()
+	{
+		PrecacheModel("models/items/boxsrounds.mdl");
+	}
+	bool MyTouch(CBasePlayer *pPlayer)
+	{
+		if (ITEM_GiveAmmo(pPlayer, SIZE_AMMO_GaussEnergy, "GaussEnergy"))
+		{
+			if (g_pGameRules->ItemShouldRespawn(this) == GR_ITEM_RESPAWN_NO)
+			{
+				UTIL_Remove(this);
+			}
+			return true;
+		}
+		return false;
+	}
+};
+LINK_ENTITY_TO_CLASS(item_box_GaussEnergyrounds, CItem_BoxGaussEnergyRounds);
+LINK_ENTITY_TO_CLASS(item_ammo_GaussEnergy, CItem_BoxGaussEnergyRounds);
+
+// ========================================================================
+//	>> Large Box iontau Rounds
+// ========================================================================
+class CItem_LargeBoxGaussEnergyRounds : public CItem
+{
+public:
+	DECLARE_CLASS(CItem_LargeBoxGaussEnergyRounds, CItem);
+
+	void Spawn()
+	{
+		Precache();
+		SetModel("models/items/boxsrounds.mdl");
+
+		BaseClass::Spawn();
+	}
+	void Precache()
+	{
+		PrecacheModel("models/items/boxsrounds.mdl");
+	}
+	bool MyTouch(CBasePlayer *pPlayer)
+	{
+		if (ITEM_GiveAmmo(pPlayer, SIZE_AMMO_GaussEnergy_LARGE, "GaussEnergy"))
+		{
+			if (g_pGameRules->ItemShouldRespawn(this) == GR_ITEM_RESPAWN_NO)
+			{
+				UTIL_Remove(this);
+			}
+			return true;
+		}
+		return false;
+	}
+};
+LINK_ENTITY_TO_CLASS(item_large_box_GaussEnergyrounds, CItem_LargeBoxGaussEnergyRounds);
+LINK_ENTITY_TO_CLASS(item_ammo_GaussEnergy_large, CItem_LargeBoxGaussEnergyRounds);
+
+// ========================================================================
 //	>> Box 9mm Nailgun Rounds
 // ========================================================================
 class CItem_BoxNAILGUNRounds : public CItem
