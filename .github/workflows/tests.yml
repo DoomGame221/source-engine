@@ -1,0 +1,40 @@
+name: android-build testing
+
+on: 
+   workflow_dispatch:
+
+jobs:
+  build-apk-for-android:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cloning modlauncher repo and preparing for building
+      run: |
+        git clone https://github.com/ItzVladik/srceng-mod-launcher
+        sudo apt-get update
+        sudo apt-get install -f -y openjdk-8-jre zip apksigner imagemagick
+
+    - name: Build Android (32 bit)
+      run: |
+        chmod +x scripts/build-android-armv7a.sh
+        scripts/build-android-armv7a.sh
+
+    - name: Build Android (64 bit)
+      run: |
+        chmod +x scripts/build-android-aarch64.sh
+        scripts/build-android-aarch64.sh
+
+    - name: Rename Built Files
+      run: |
+        mv srceng-mod-launcher/build/android/mod-armv7a.apk mod-armv7a-release.apk
+        mv srceng-mod-launcher/build/android/mod-aarch64.apk mod-aarch64-release.apk
+
+    - name: 'Upload Artifacts'
+      uses: actions/upload-artifact@v3
+      with:
+        name: mod-android-artifacts
+        path: |
+          mod-armv7a-release.apk
+          mod-aarch64-release.apk
